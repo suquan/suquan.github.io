@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>KVO使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
+使用场景KVO的是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KVO使用">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/kvo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
+使用场景KVO的是">
+<meta property="og:updated_time" content="2016-05-19T12:48:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KVO使用">
+<meta name="twitter:description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
+使用场景KVO的是">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-kvo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/30/kvo/" class="article-date">
+  <time datetime="2016-04-30T14:21:59.000Z" itemprop="datePublished">2016-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      KVO使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>KVO的使用也很简单，就是简单的3步。<br>1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:<br>2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用<br>3.取消注册观察removeObserver:forKeyPath:context:</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>KVO的是KeyValue Observe的缩写，中文是键值观察。KVO是一个对象能够观察另外一个对象的属性的值，并且能够现值的变化。Notification和Delegate模式更加适合一个controller与任何其他的对象进行通信，而 KVO更加适合任何类型的对象侦听另外一个任意对象的改变（这里也可以是controller，但一般不是controller）。这是一个对象与另外一 个对象保持同步的一种方法，即当另外一种对象的状态发生改变时，观察对象马上作出反应。它只能用来对属性作出反应，而不会用来对方法或者动作作出反应。<br>有如下优点：能够提供一种简单的方法实现两个对象间的同步。例如：model和view之间同步；能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；能够提供观察的属性的最新值以及先前值；用key paths来观察属性，因此也可以观察嵌套对象；完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察</p>
+<h3 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h3><p>自己写过一个demo，用dog监听人的年龄属性值的改变，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[self.person addObserver:self.dog <span class="keyword">for</span>KeyPath:@<span class="string">"age"</span> options:0 context:nil];</span><br></pre></td></tr></table></figure></p>
+<p>假设狗要监听人的年龄的属性，在程序运行时，程序将person类改写成NSkvoNotifying_person类；重写setage方法，在set方法中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self willChangeValueForKey:@<span class="string">"age"</span>];</span><br><span class="line">[self didChangeValueForKey:@<span class="string">"age”];</span></span><br></pre></td></tr></table></figure></p>
+<p>通知狗对象，调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</span><br></pre></td></tr></table></figure></p>
+<p>实现kvo。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/30/kvo/" data-id="ciofxyomw0000yld3r2djlfhd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/21/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/30/写在开篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">写在开篇 fuck you</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/30/kvo/">KVO使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/30/写在开篇/">写在开篇 fuck you</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/30/block/">挖一挖Block</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
