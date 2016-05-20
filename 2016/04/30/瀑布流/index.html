@@ -84,19 +84,24 @@
 
 
 
-<meta name="description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
-使用场景KVO的是">
+<meta name="description" content="像蘑菇街，美丽说等女性购物网站中，越来越多用到了瀑布流的展现手法来显示购物内容，不同于collection，瀑布流中的商品展现形式是不同的商品是不同的长度，依次排列。自己写了一个瀑布流的demo，实现此种形式的功能，另外还要参考tableview的代码形式，给使用此框架者较好的调用体验，同时做好cell复用。
+思路
+szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承自UI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KVO使用">
-<meta property="og:url" content="http://yoursite.com/2016/04/30/kvo/index.html">
+<meta property="og:title" content="瀑布流">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/瀑布流/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
-使用场景KVO的是">
-<meta property="og:updated_time" content="2016-05-19T12:48:01.000Z">
+<meta property="og:description" content="像蘑菇街，美丽说等女性购物网站中，越来越多用到了瀑布流的展现手法来显示购物内容，不同于collection，瀑布流中的商品展现形式是不同的商品是不同的长度，依次排列。自己写了一个瀑布流的demo，实现此种形式的功能，另外还要参考tableview的代码形式，给使用此框架者较好的调用体验，同时做好cell复用。
+思路
+szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承自UI">
+<meta property="og:image" content="http://cl.ly/051g2j0I0e0t/Screen%20Recording%202016-05-20%20at%2004.11%20%E4%B8%8B%E5%8D%88.gif">
+<meta property="og:updated_time" content="2016-05-20T15:19:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KVO使用">
-<meta name="twitter:description" content="基本使用KVO的使用也很简单，就是简单的3步。1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用3.取消注册观察removeObserver:forKeyPath:context:
-使用场景KVO的是">
+<meta name="twitter:title" content="瀑布流">
+<meta name="twitter:description" content="像蘑菇街，美丽说等女性购物网站中，越来越多用到了瀑布流的展现手法来显示购物内容，不同于collection，瀑布流中的商品展现形式是不同的商品是不同的长度，依次排列。自己写了一个瀑布流的demo，实现此种形式的功能，另外还要参考tableview的代码形式，给使用此框架者较好的调用体验，同时做好cell复用。
+思路
+szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承自UI">
+<meta name="twitter:image" content="http://cl.ly/051g2j0I0e0t/Screen%20Recording%202016-05-20%20at%2004.11%20%E4%B8%8B%E5%8D%88.gif">
 
 
 
@@ -114,7 +119,7 @@
   };
 </script>
 
-  <title> KVO使用 | Hexo </title>
+  <title> 瀑布流 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -234,7 +239,7 @@
             
             
               
-                KVO使用
+                瀑布流
               
             
           </h1>
@@ -274,13 +279,22 @@
       
 
       
-        <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>KVO的使用也很简单，就是简单的3步。<br>1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:<br>2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用<br>3.取消注册观察removeObserver:forKeyPath:context:</p>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>KVO的是KeyValue Observe的缩写，中文是键值观察。KVO是一个对象能够观察另外一个对象的属性的值，并且能够现值的变化。Notification和Delegate模式更加适合一个controller与任何其他的对象进行通信，而 KVO更加适合任何类型的对象侦听另外一个任意对象的改变（这里也可以是controller，但一般不是controller）。这是一个对象与另外一 个对象保持同步的一种方法，即当另外一种对象的状态发生改变时，观察对象马上作出反应。它只能用来对属性作出反应，而不会用来对方法或者动作作出反应。<br>有如下优点：能够提供一种简单的方法实现两个对象间的同步。例如：model和view之间同步；能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；能够提供观察的属性的最新值以及先前值；用key paths来观察属性，因此也可以观察嵌套对象；完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察</p>
-<h3 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h3><p>自己写过一个demo，用dog监听人的年龄属性值的改变，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[self.person addObserver:self.dog <span class="keyword">for</span>KeyPath:@<span class="string">"age"</span> options:0 context:nil];</span><br></pre></td></tr></table></figure></p>
-<p>假设狗要监听人的年龄的属性，在程序运行时，程序将person类改写成NSkvoNotifying_person类；重写setage方法，在set方法中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self willChangeValueForKey:@<span class="string">"age"</span>];</span><br><span class="line">[self didChangeValueForKey:@<span class="string">"age”];</span></span><br></pre></td></tr></table></figure></p>
-<p>通知狗对象，调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</span><br></pre></td></tr></table></figure></p>
-<p>实现kvo。</p>
-
+        <p>像蘑菇街，美丽说等女性购物网站中，越来越多用到了瀑布流的展现手法来显示购物内容，不同于collection，瀑布流中的商品展现形式是不同的商品是不同的长度，依次排列。自己写了一个瀑布流的demo，实现此种形式的功能，另外还要参考tableview的代码形式，给使用此框架者较好的调用体验，同时做好cell复用。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承自UIScrollView，展示的每个瀑布流控件是它的子控件</li>
+<li>子控件的数量是来自于外部的控制器，需要设置数据源代理，使view和controller之间通信。每个展示的子cell也需要从外部来获得（像tableview一样）。</li>
+<li>每个cell的点击事件需要通知外部控制器，需要设置代理。</li>
+<li>在tableview中，创建好了tableview之后，需要调用一下reloaddata，这里一样，此函数是一个UI加载的起点。</li>
+</ul>
+<h3 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h3><ul>
+<li>从reloaddata开始，在此函数中计算每个cell的frame的大小，与此同时，设计一个maxcolumn数组，装每列的最大y值，cell的frame的位置是放在当前界面中列的y值最小的一列。计算好一个cell的frame，继续维护当前的maxcolumn数组。</li>
+<li>layoutsubviews 该函数一般是用来给子部件布局使用（uiview内部是子控件的frame设置是在此进行的）,在UIScrollView中，由于不停的滚动，子部件需要重新布局，会持续调用该函数。所以在该函数中创建cell，设置cell的frame。</li>
+<li>需要说明的是，我们需要判断一个cell的是否存在于当前的界面上，判断核心是利用contentoffset。</li>
+<li>维护一个当前显示的cell的数组，和一个缓存池（NSMutableSet），所有的当前显示在界面上的cell全部放在数组中，缓存池中存放已经出了当前界面的cell。如果需要新的cell。首先从缓存池中取。</li>
+</ul>
+<h3 id="调用街口"><a href="#调用街口" class="headerlink" title="调用街口"></a>调用街口</h3><p>如果需要调用该瀑布流，那么在controller中需要alloc一个szwaterflowview，设置到当前页面，然后需要设置数据源和代理，调用一下reloaddata，实现数据源方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(NSUInteger)NumOfCellsInWaterFlow:(SZwaterFlowView *)waterFlow</span><br><span class="line">-(SZwaterFlowCell *)waterFlow:(SZwaterFlowView *)waterFlow AtindexPath:(NSUInteger)index</span><br></pre></td></tr></table></figure></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://cl.ly/051g2j0I0e0t/Screen%20Recording%202016-05-20%20at%2004.11%20%E4%B8%8B%E5%8D%88.gif" alt="牛逼"></p>
+<h3 id="demo地址"><a href="#demo地址" class="headerlink" title="demo地址"></a>demo地址</h3>
       
     </div>
 
@@ -304,16 +318,12 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/30/写在开篇/" rel="next" title="写在开篇 fuck you">
-                <i class="fa fa-chevron-left"></i> 写在开篇 fuck you
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/30/block/" rel="prev" title="挖一挖Block">
-                挖一挖Block <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/30/写在开篇/" rel="prev" title="写在开篇 fuck you">
+                写在开篇 fuck you <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,7 +424,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景"><span class="nav-number">2.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底层实现"><span class="nav-number">3.</span> <span class="nav-text">底层实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键点"><span class="nav-number">2.</span> <span class="nav-text">关键点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用街口"><span class="nav-number">3.</span> <span class="nav-text">调用街口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo地址"><span class="nav-number">5.</span> <span class="nav-text">demo地址</span></a></li></ol></div>
             
           </div>
         </section>
