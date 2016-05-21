@@ -1,0 +1,561 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一些语法更改对象的类／获取对象的类1234CustomClass *class1 = [[CustomClass alloc]init];Class aclass =object_setClass(class1, [TestClass class]);NSLog(@&quot;aclass--%@&quot;,NSStringFromClass(aclass));NSLog(@&quot;class1--%@&quot;,NSStrin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Runtime常见使用">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/runtime/index.html">
+<meta property="og:site_name" content="loveSugar">
+<meta property="og:description" content="一些语法更改对象的类／获取对象的类1234CustomClass *class1 = [[CustomClass alloc]init];Class aclass =object_setClass(class1, [TestClass class]);NSLog(@&quot;aclass--%@&quot;,NSStringFromClass(aclass));NSLog(@&quot;class1--%@&quot;,NSStrin">
+<meta property="og:updated_time" content="2016-05-21T03:42:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Runtime常见使用">
+<meta name="twitter:description" content="一些语法更改对象的类／获取对象的类1234CustomClass *class1 = [[CustomClass alloc]init];Class aclass =object_setClass(class1, [TestClass class]);NSLog(@&quot;aclass--%@&quot;,NSStringFromClass(aclass));NSLog(@&quot;class1--%@&quot;,NSStrin">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Runtime常见使用 | loveSugar </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">loveSugar</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">苏正权的个人技术博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Runtime常见使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
+              2016-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一些语法"><a href="#一些语法" class="headerlink" title="一些语法"></a>一些语法</h3><p>更改对象的类／获取对象的类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CustomClass *class1 = [[CustomClass alloc]init];</span><br><span class="line">Class aclass =object_<span class="built_in">set</span>Class(class1, [TestClass class]);</span><br><span class="line">NSLog(@<span class="string">"aclass--%@"</span>,NSStringFromClass(aclass));</span><br><span class="line">NSLog(@<span class="string">"class1--%@"</span>,NSStringFromClass([class1 class]));</span><br></pre></td></tr></table></figure></p>
+<p>获取对象的类名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CustomClass *class = [[CustomClass alloc]init];</span><br><span class="line">const char *name = object_getClassName(class);</span><br><span class="line">NSString *className = [NSString stringWithUTF8String:name];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,className);</span><br></pre></td></tr></table></figure></p>
+<p>获取一个类的所有方法， 所有的get set方法都能得到 还有公有的和私有的方法也能得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">unsigned int count = 0;</span><br><span class="line">Method *methods = class_copyMethodList([CustomClass class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">SEL name =method_getName(methods[i]);</span><br><span class="line">const char *str = sel_getName(name);</span><br><span class="line">NSString *str1 = [NSString stringWithUTF8String:str];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,str1);</span><br><span class="line">&#125;</span><br><span class="line">free(methods);</span><br></pre></td></tr></table></figure></p>
+<p>获取一个类的所有属性,私有成员变量也可以得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">unsigned int count = 0;</span><br><span class="line">objc_property_t *properties = class_copyPropertyList([CustomClass class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">const char *propertyname = property_getName(properties[i]);</span><br><span class="line">NSString *str = [NSString stringWithUTF8String:propertyname];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,str);</span><br><span class="line">&#125;</span><br><span class="line">free(properties);</span><br></pre></td></tr></table></figure></p>
+<h3 id="常见的使用"><a href="#常见的使用" class="headerlink" title="常见的使用"></a>常见的使用</h3><p>对象归档解档时需要的编码操作，假设对象有多个成员变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,assign)int age;</span><br><span class="line">@property(nonatomic,copy)NSString * name;</span><br><span class="line">@property(nonatomic,assign)<span class="built_in">float</span> *height;</span><br><span class="line">@property(nonatomic,copy)NSString *hobby;</span><br></pre></td></tr></table></figure></p>
+<p>归档处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-(void)encodeWithCoder:(NSCoder *)aCoder</span><br><span class="line">&#123;</span><br><span class="line">unsigned int count=0;</span><br><span class="line">//    获取所有从成员变量</span><br><span class="line">Ivar *ivars = class_copyIvarList([person class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">Ivar ivar = ivars[i];</span><br><span class="line"></span><br><span class="line">const char *name = ivar_getName(ivar);</span><br><span class="line">NSLog(@<span class="string">"%s"</span>,name);</span><br><span class="line">//        归档</span><br><span class="line">NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">id value = [self valueForKey:key];</span><br><span class="line">[aCoder encodeObject:value <span class="keyword">for</span>Key:key];</span><br><span class="line">&#125;</span><br><span class="line">free(ivars);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解档处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-(instancetype)initWithCoder:(NSCoder *)aDecoder</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (self=[super init])</span><br><span class="line">&#123;</span><br><span class="line">unsigned int count =0;</span><br><span class="line">Ivar *ivars = class_copyIvarList([person class], &amp;count);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">Ivar ivar = ivars[i];</span><br><span class="line">const char *name = ivar_getName(ivar);</span><br><span class="line">//            解档</span><br><span class="line">NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">id value =[aDecoder decodeObjectForKey:key];</span><br><span class="line">[self <span class="built_in">set</span>Value:value <span class="keyword">for</span>Key:key];</span><br><span class="line">&#125;</span><br><span class="line">free(ivars);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>给分类增加成员变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,copy)NSString *name;</span><br><span class="line">static const char *key = <span class="string">"name"</span>;</span><br><span class="line">-(void)<span class="built_in">set</span>Name:(NSString *)name</span><br><span class="line">&#123;</span><br><span class="line">objc_<span class="built_in">set</span>AssociatedObject(self, key, name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line">-(NSString *)name</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> objc_getAssociatedObject(self, key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="字典转模型"><a href="#字典转模型" class="headerlink" title="字典转模型"></a>字典转模型</h3><ul>
+<li><p>供解析的例子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">NSDictionary *dict3 = @&#123;</span><br><span class="line">@<span class="string">"statuses"</span> : @[</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"text"</span> : @<span class="string">"今天天气真不错！"</span>,</span><br><span class="line"></span><br><span class="line">@<span class="string">"user"</span> : @&#123;</span><br><span class="line">@<span class="string">"name"</span> : @<span class="string">"Rose"</span>,</span><br><span class="line">@<span class="string">"icon"</span> : @<span class="string">"nami.png"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"text"</span> : @<span class="string">"明天去旅游了"</span>,</span><br><span class="line"></span><br><span class="line">@<span class="string">"user"</span> : @&#123;</span><br><span class="line">@<span class="string">"name"</span> : @<span class="string">"Jack"</span>,</span><br><span class="line">@<span class="string">"icon"</span> : @<span class="string">"lufy.png"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">@<span class="string">"ads"</span> : @[</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"image"</span> : @<span class="string">"ad01.png"</span>,</span><br><span class="line">@<span class="string">"url"</span> : @<span class="string">"http://www.ad01.com"</span></span><br><span class="line">&#125;,</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"image"</span> : @<span class="string">"ad02.png"</span>,</span><br><span class="line">@<span class="string">"url"</span> : @<span class="string">"http://www.ad02.com"</span></span><br><span class="line">&#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">@<span class="string">"totalNumber"</span> : @<span class="string">"2014"</span>,</span><br><span class="line">@<span class="string">"previousCursor"</span> : @<span class="string">"13476589"</span>,</span><br><span class="line">@<span class="string">"nextCursor"</span> : @<span class="string">"13476599"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为nsobject增加一个分类。传入一个字典参数。</p>
+</li>
+<li>获得全体成员变量 Ivar *ivarList = class_copyIvarList(self, &amp;count);</li>
+<li>获得每个成员变量的名称  NSString *name = [NSString stringWithUTF8String:ivar_getName(ivar)];</li>
+<li>取出字典中该name名称的对应的value值，id value = Dict[key];判断value是什么类型</li>
+<li>如果value是字典类型，需要得到该成员变量的类型NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];并将该类型转为class，<br>Class modelClass = NSClassFromString(type);再来递归调用。</li>
+<li><p>如果value是数组，就需要了解该数组中装的到底是什么类型的变量，在分类中需要定义协议</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@protocol ModelDelegate &lt;NSObject&gt;</span><br><span class="line">+(NSDictionary*)objectClassInArray;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并在成员变量包含数组的类中实现协议方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+ (NSDictionary *)objectClassInArray</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> @&#123;</span><br><span class="line">@<span class="string">"statuses"</span> : @<span class="string">"SugarStatues"</span>,</span><br><span class="line">@<span class="string">"ads"</span> : @<span class="string">"SugarADs"</span>,</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>得到当前key对应的数组中变量的类型（得到的string要转化成class类型），遍历数组中的成员，将字典转为模型。</p>
+<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p><a href="https://github.com/suquan/simpleModelConvert" target="_blank" rel="external">Demo链接地址</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/30/写在开篇/" rel="next" title="写在开篇">
+                <i class="fa fa-chevron-left"></i> 写在开篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description">春风十里不如你</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些语法"><span class="nav-number">1.</span> <span class="nav-text">一些语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的使用"><span class="nav-number">2.</span> <span class="nav-text">常见的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典转模型"><span class="nav-number">3.</span> <span class="nav-text">字典转模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DEMO"><span class="nav-number">4.</span> <span class="nav-text">DEMO</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -170,7 +170,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -180,7 +180,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -233,8 +233,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/kvo/" itemprop="url">
-                  KVO使用
+                <a class="post-title-link" href="/2016/04/30/runtime/" itemprop="url">
+                  Runtime常见使用
                 </a>
               
             
@@ -246,7 +246,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -277,118 +277,34 @@
       
         
           
-            <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>KVO的使用也很简单，就是简单的3步。<br>1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:<br>2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用<br>3.取消注册观察removeObserver:forKeyPath:context:</p>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>KVO的是KeyValue Observe的缩写，中文是键值观察。KVO是一个对象能够观察另外一个对象的属性的值，并且能够现值的变化。Notification和Delegate模式更加适合一个controller与任何其他的对象进行通信，而 KVO更加适合任何类型的对象侦听另外一个任意对象的改变（这里也可以是controller，但一般不是controller）。这是一个对象与另外一 个对象保持同步的一种方法，即当另外一种对象的状态发生改变时，观察对象马上作出反应。它只能用来对属性作出反应，而不会用来对方法或者动作作出反应。<br>有如下优点：能够提供一种简单的方法实现两个对象间的同步。例如：model和view之间同步；能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；能够提供观察的属性的最新值以及先前值；用key paths来观察属性，因此也可以观察嵌套对象；完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察</p>
-<h3 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h3><p>自己写过一个demo，用dog监听人的年龄属性值的改变，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[self.person addObserver:self.dog <span class="keyword">for</span>KeyPath:@<span class="string">"age"</span> options:0 context:nil];</span><br></pre></td></tr></table></figure></p>
-<p>假设狗要监听人的年龄的属性，在程序运行时，程序将person类改写成NSkvoNotifying_person类；重写setage方法，在set方法中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self willChangeValueForKey:@<span class="string">"age"</span>];</span><br><span class="line">[self didChangeValueForKey:@<span class="string">"age”];</span></span><br></pre></td></tr></table></figure></p>
-<p>通知狗对象，调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</span><br></pre></td></tr></table></figure></p>
-<p>实现kvo。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/30/block/" itemprop="url">
-                  挖一挖Block
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
-              2016-04-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="block使用总结"><a href="#block使用总结" class="headerlink" title="block使用总结"></a>block使用总结</h2><p><a href="">block</a>是iOS开发一个经常会使用到的知识点，对于初学者，理解起来有些困难，由于在找工作找实习中经常会被问到这个点（腾讯，阿里面试都被问到了），所以抽出一些时间来把相关的盲区打通，做一个总结。</p>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>//定义一个无参无返回值block类型的变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void(^block)() = ^&#123;NSLog(@<span class="string">"testBlock"</span>);&#125;;</span><br><span class="line"></span><br><span class="line">block();//调用该block</span><br></pre></td></tr></table></figure></p>
-<p>有参无返回值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void(^block1)(NSString*name) = ^(NSString*name)&#123;NSLog(@<span class="string">"%@"</span>,name);&#125;;</span><br><span class="line"></span><br><span class="line">block1(@<span class="string">"你好"</span>)；//调用该block</span><br></pre></td></tr></table></figure></p>
-<p>//有参有返回值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int(^sum) (int num1,int num2) = ^(int num1,int num2)&#123;<span class="built_in">return</span> num1 + num2;&#125;;</span><br><span class="line"></span><br><span class="line">int rs=sum(10,30);//调用该block</span><br></pre></td></tr></table></figure></p>
-<h3 id="作为参数和属性"><a href="#作为参数和属性" class="headerlink" title="作为参数和属性"></a>作为参数和属性</h3><p>经常看到的是作为函数参数，分为两种写法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">-----.h--------</span><br><span class="line"></span><br><span class="line">typedef void(^ReturnTextBlock)(NSString* showText);</span><br><span class="line"></span><br><span class="line">@property(nonatomic,copy)void(^block)();</span><br><span class="line"></span><br><span class="line">@property(nonatomic,copy) ReturnTextBlock <span class="built_in">return</span>TextBlock;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">test</span>:(void(^)(NSString*str)) block;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">return</span>Text:(ReturnTextBlock)block;</span><br><span class="line"></span><br><span class="line">-------.m------</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">test</span>:(void(^)(NSString*str))block&#123;</span><br><span class="line"></span><br><span class="line">block(@<span class="string">"hshs"</span>);&#125;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">return</span>Text:(ReturnTextBlock)block &#123;</span><br><span class="line"></span><br><span class="line">self.returnTextBlock= block;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-----调用时-------</span><br><span class="line"></span><br><span class="line">[vc <span class="built_in">test</span>:^(NSString*str) &#123;</span><br><span class="line"></span><br><span class="line">self.textfiled.text= str;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[vc <span class="built_in">return</span>Text:^(NSString*showText) &#123;</span><br><span class="line"></span><br><span class="line">self.textfiled.text=showText;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
-<p>在上面这个例子中，我使用block进行不同控制器之间传值。将后面一个控制器上的textfiled上自定义的text显示到前一个控制器的界面上，在returnText中将参数block赋给属性block，执行属性block时，就会回到上一个控制器中调用self.textfiled.text=showText;block相当于把代码存起来了。</p>
-<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>block在内存中的状态有三种：NSGlobalBlock，NSStackBlock，NSMallocBlock。NSGlobalBlock，我们只要实现一个对周围变量没有引用的Block，打印该block就会显示为NSGlobalBlock。而如果其中加入了对定义环境变量的引用，就是NSStackBlock。那么NSMallocBlock又是哪来的呢？malloc一词其实大家都熟悉，就是在堆上分配动态内存时。没错，如果你对一个NSStackBlock对象使用了Block_copy()或者发送了copy消息，就会得到NSMallocBlock。</p>
-<p>作为属性，要用copy修饰，原因在于给属性传递的block是存放在栈中，相当于局部变量，为了使该block能够保存起来，用copy修饰，拷贝一下，放在堆中，可以用引用计数对其内存进行管理。</p>
-<p>循环引用问题：</p>
-<p>对象拥有block或者函数方法中有block作为参数，该对象拥有对block的强引用，如果在block中又调用了该对象本身或者其他的成员变量，那么block也拥有对该对象的强引用。ARC的内存管理原则是如果某对象有强引用，该对象是无法被内存释放的，那么block与对象引用成环，构成循环引用，造成内存泄漏。</p>
-<p>解决方法，在block中谨慎分析，发现有循环引用的情况发生时，在block内部将调用的对象弱指针化。__weak typeof(self) weakself = self;</p>
-<h3 id="block底层实现"><a href="#block底层实现" class="headerlink" title="block底层实现"></a>block底层实现</h3><p>利用编译命令将block编译为c++代码：<br>编译结果：<br>block编译结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">struct __main_block_impl_0 &#123;</span><br><span class="line">struct __block_impl impl;</span><br><span class="line">struct __main_block_desc_0* Desc;</span><br><span class="line">int a;</span><br><span class="line">__main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, int _a, int flags=0) : a(_a) &#123;</span><br><span class="line">impl.isa = &amp;_NSConcreteStackBlock;</span><br><span class="line">impl.Flags = flags;</span><br><span class="line">impl.FuncPtr = fp;</span><br><span class="line">Desc = desc;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">static void __main_block_func_0(struct __main_block_impl_0 *__cself) &#123;</span><br><span class="line">int a = __cself-&gt;a; // bound by copy</span><br><span class="line"></span><br><span class="line">NSLog((NSString *)&amp;__NSConstantStringImpl__var_folders_n__hxtq4ntx1t97ttjtckfnwxlc0000gn_T_main_f9b502_mi_0,a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static struct __main_block_desc_0 &#123;</span><br><span class="line">size_t reserved;</span><br><span class="line">size_t Block_size;</span><br><span class="line">&#125; __main_block_desc_0_DATA = &#123; 0, sizeof(struct __main_block_impl_0)&#125;;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">/* @autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int a=10;</span><br><span class="line"></span><br><span class="line">void (*block)()=&amp;__main_block_impl_0(__main_block_func_0, &amp;__main_block_desc_0_DATA, a));</span><br><span class="line"></span><br><span class="line">a=20;</span><br><span class="line">((void (*)(__block_impl *))((__block_impl *)block)-&gt;FuncPtr)((__block_impl *)block);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">static struct IMAGE_INFO &#123; unsigned version; unsigned flag; &#125; _OBJC_IMAGE_INFO = &#123; 0, 2 &#125;;</span><br></pre></td></tr></table></figure></p>
-<p>block的本质是一个指向结构体的指针，编译器会将block内部的代码生成对应的函数<br>block默认放在栈中，不需要开发人员管理<br>对block进行copy操作，block内存会放在堆里 。<br>MRC：它会对所引用的对象做一次retain操作（叫做循环retain）。如果在该对象的前面用<strong>__block</strong>修饰，block不会对该对象进行retain操作<br>ARC：在ARC中，block会对其中调用的对象一次强引用，容易引起强引用循环，造成内存泄漏。如果在block引用对象前使用<strong>__unsafe_unretain</strong>或者<strong>__weak</strong><br>可以打破循环，使内存正常释放。<br>block修饰要用copy，用assign的话block放在栈中，保不住命</p>
+            <h3 id="一些语法"><a href="#一些语法" class="headerlink" title="一些语法"></a>一些语法</h3><p>更改对象的类／获取对象的类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CustomClass *class1 = [[CustomClass alloc]init];</span><br><span class="line">Class aclass =object_<span class="built_in">set</span>Class(class1, [TestClass class]);</span><br><span class="line">NSLog(@<span class="string">"aclass--%@"</span>,NSStringFromClass(aclass));</span><br><span class="line">NSLog(@<span class="string">"class1--%@"</span>,NSStringFromClass([class1 class]));</span><br></pre></td></tr></table></figure></p>
+<p>获取对象的类名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CustomClass *class = [[CustomClass alloc]init];</span><br><span class="line">const char *name = object_getClassName(class);</span><br><span class="line">NSString *className = [NSString stringWithUTF8String:name];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,className);</span><br></pre></td></tr></table></figure></p>
+<p>获取一个类的所有方法， 所有的get set方法都能得到 还有公有的和私有的方法也能得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">unsigned int count = 0;</span><br><span class="line">Method *methods = class_copyMethodList([CustomClass class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">SEL name =method_getName(methods[i]);</span><br><span class="line">const char *str = sel_getName(name);</span><br><span class="line">NSString *str1 = [NSString stringWithUTF8String:str];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,str1);</span><br><span class="line">&#125;</span><br><span class="line">free(methods);</span><br></pre></td></tr></table></figure></p>
+<p>获取一个类的所有属性,私有成员变量也可以得到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">unsigned int count = 0;</span><br><span class="line">objc_property_t *properties = class_copyPropertyList([CustomClass class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">const char *propertyname = property_getName(properties[i]);</span><br><span class="line">NSString *str = [NSString stringWithUTF8String:propertyname];</span><br><span class="line">NSLog(@<span class="string">"%@"</span>,str);</span><br><span class="line">&#125;</span><br><span class="line">free(properties);</span><br></pre></td></tr></table></figure></p>
+<h3 id="常见的使用"><a href="#常见的使用" class="headerlink" title="常见的使用"></a>常见的使用</h3><p>对象归档解档时需要的编码操作，假设对象有多个成员变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,assign)int age;</span><br><span class="line">@property(nonatomic,copy)NSString * name;</span><br><span class="line">@property(nonatomic,assign)<span class="built_in">float</span> *height;</span><br><span class="line">@property(nonatomic,copy)NSString *hobby;</span><br></pre></td></tr></table></figure></p>
+<p>归档处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-(void)encodeWithCoder:(NSCoder *)aCoder</span><br><span class="line">&#123;</span><br><span class="line">unsigned int count=0;</span><br><span class="line">//    获取所有从成员变量</span><br><span class="line">Ivar *ivars = class_copyIvarList([person class], &amp;count);</span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">Ivar ivar = ivars[i];</span><br><span class="line"></span><br><span class="line">const char *name = ivar_getName(ivar);</span><br><span class="line">NSLog(@<span class="string">"%s"</span>,name);</span><br><span class="line">//        归档</span><br><span class="line">NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">id value = [self valueForKey:key];</span><br><span class="line">[aCoder encodeObject:value <span class="keyword">for</span>Key:key];</span><br><span class="line">&#125;</span><br><span class="line">free(ivars);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解档处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-(instancetype)initWithCoder:(NSCoder *)aDecoder</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (self=[super init])</span><br><span class="line">&#123;</span><br><span class="line">unsigned int count =0;</span><br><span class="line">Ivar *ivars = class_copyIvarList([person class], &amp;count);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (int i=0; i&lt;count; i++)</span><br><span class="line">&#123;</span><br><span class="line">Ivar ivar = ivars[i];</span><br><span class="line">const char *name = ivar_getName(ivar);</span><br><span class="line">//            解档</span><br><span class="line">NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">id value =[aDecoder decodeObjectForKey:key];</span><br><span class="line">[self <span class="built_in">set</span>Value:value <span class="keyword">for</span>Key:key];</span><br><span class="line">&#125;</span><br><span class="line">free(ivars);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>给分类增加成员变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,copy)NSString *name;</span><br><span class="line">static const char *key = <span class="string">"name"</span>;</span><br><span class="line">-(void)<span class="built_in">set</span>Name:(NSString *)name</span><br><span class="line">&#123;</span><br><span class="line">objc_<span class="built_in">set</span>AssociatedObject(self, key, name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line">-(NSString *)name</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> objc_getAssociatedObject(self, key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="字典转模型"><a href="#字典转模型" class="headerlink" title="字典转模型"></a>字典转模型</h3><ul>
+<li><p>供解析的例子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">NSDictionary *dict3 = @&#123;</span><br><span class="line">@<span class="string">"statuses"</span> : @[</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"text"</span> : @<span class="string">"今天天气真不错！"</span>,</span><br><span class="line"></span><br><span class="line">@<span class="string">"user"</span> : @&#123;</span><br><span class="line">@<span class="string">"name"</span> : @<span class="string">"Rose"</span>,</span><br><span class="line">@<span class="string">"icon"</span> : @<span class="string">"nami.png"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"text"</span> : @<span class="string">"明天去旅游了"</span>,</span><br><span class="line"></span><br><span class="line">@<span class="string">"user"</span> : @&#123;</span><br><span class="line">@<span class="string">"name"</span> : @<span class="string">"Jack"</span>,</span><br><span class="line">@<span class="string">"icon"</span> : @<span class="string">"lufy.png"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">@<span class="string">"ads"</span> : @[</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"image"</span> : @<span class="string">"ad01.png"</span>,</span><br><span class="line">@<span class="string">"url"</span> : @<span class="string">"http://www.ad01.com"</span></span><br><span class="line">&#125;,</span><br><span class="line">@&#123;</span><br><span class="line">@<span class="string">"image"</span> : @<span class="string">"ad02.png"</span>,</span><br><span class="line">@<span class="string">"url"</span> : @<span class="string">"http://www.ad02.com"</span></span><br><span class="line">&#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">@<span class="string">"totalNumber"</span> : @<span class="string">"2014"</span>,</span><br><span class="line">@<span class="string">"previousCursor"</span> : @<span class="string">"13476589"</span>,</span><br><span class="line">@<span class="string">"nextCursor"</span> : @<span class="string">"13476599"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为nsobject增加一个分类。传入一个字典参数。</p>
+</li>
+<li>获得全体成员变量 Ivar *ivarList = class_copyIvarList(self, &amp;count);</li>
+<li>获得每个成员变量的名称  NSString *name = [NSString stringWithUTF8String:ivar_getName(ivar)];</li>
+<li>取出字典中该name名称的对应的value值，id value = Dict[key];判断value是什么类型</li>
+<li>如果value是字典类型，需要得到该成员变量的类型NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];并将该类型转为class，<br>Class modelClass = NSClassFromString(type);再来递归调用。</li>
+<li><p>如果value是数组，就需要了解该数组中装的到底是什么类型的变量，在分类中需要定义协议</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@protocol ModelDelegate &lt;NSObject&gt;</span><br><span class="line">+(NSDictionary*)objectClassInArray;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并在成员变量包含数组的类中实现协议方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+ (NSDictionary *)objectClassInArray</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">return</span> @&#123;</span><br><span class="line">@<span class="string">"statuses"</span> : @<span class="string">"SugarStatues"</span>,</span><br><span class="line">@<span class="string">"ads"</span> : @<span class="string">"SugarADs"</span>,</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>得到当前key对应的数组中变量的类型（得到的string要转化成class类型），遍历数组中的成员，将字典转为模型。</p>
+<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><p><a href="https://github.com/suquan/simpleModelConvert" target="_blank" rel="external">Demo链接地址</a></p>
+</li>
+</ul>
 
           
         
@@ -451,7 +367,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -545,7 +461,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -619,6 +535,211 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/30/block/" itemprop="url">
+                  挖一挖Block
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
+              2016-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="block使用总结"><a href="#block使用总结" class="headerlink" title="block使用总结"></a>block使用总结</h2><p><a href="">block</a>是iOS开发一个经常会使用到的知识点，对于初学者，理解起来有些困难，由于在找工作找实习中经常会被问到这个点（腾讯，阿里面试都被问到了），所以抽出一些时间来把相关的盲区打通，做一个总结。</p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>//定义一个无参无返回值block类型的变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void(^block)() = ^&#123;NSLog(@<span class="string">"testBlock"</span>);&#125;;</span><br><span class="line"></span><br><span class="line">block();//调用该block</span><br></pre></td></tr></table></figure></p>
+<p>有参无返回值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void(^block1)(NSString*name) = ^(NSString*name)&#123;NSLog(@<span class="string">"%@"</span>,name);&#125;;</span><br><span class="line"></span><br><span class="line">block1(@<span class="string">"你好"</span>)；//调用该block</span><br></pre></td></tr></table></figure></p>
+<p>//有参有返回值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int(^sum) (int num1,int num2) = ^(int num1,int num2)&#123;<span class="built_in">return</span> num1 + num2;&#125;;</span><br><span class="line"></span><br><span class="line">int rs=sum(10,30);//调用该block</span><br></pre></td></tr></table></figure></p>
+<h3 id="作为参数和属性"><a href="#作为参数和属性" class="headerlink" title="作为参数和属性"></a>作为参数和属性</h3><p>经常看到的是作为函数参数，分为两种写法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">-----.h--------</span><br><span class="line"></span><br><span class="line">typedef void(^ReturnTextBlock)(NSString* showText);</span><br><span class="line"></span><br><span class="line">@property(nonatomic,copy)void(^block)();</span><br><span class="line"></span><br><span class="line">@property(nonatomic,copy) ReturnTextBlock <span class="built_in">return</span>TextBlock;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">test</span>:(void(^)(NSString*str)) block;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">return</span>Text:(ReturnTextBlock)block;</span><br><span class="line"></span><br><span class="line">-------.m------</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">test</span>:(void(^)(NSString*str))block&#123;</span><br><span class="line"></span><br><span class="line">block(@<span class="string">"hshs"</span>);&#125;</span><br><span class="line"></span><br><span class="line">-(void)<span class="built_in">return</span>Text:(ReturnTextBlock)block &#123;</span><br><span class="line"></span><br><span class="line">self.returnTextBlock= block;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-----调用时-------</span><br><span class="line"></span><br><span class="line">[vc <span class="built_in">test</span>:^(NSString*str) &#123;</span><br><span class="line"></span><br><span class="line">self.textfiled.text= str;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[vc <span class="built_in">return</span>Text:^(NSString*showText) &#123;</span><br><span class="line"></span><br><span class="line">self.textfiled.text=showText;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+<p>在上面这个例子中，我使用block进行不同控制器之间传值。将后面一个控制器上的textfiled上自定义的text显示到前一个控制器的界面上，在returnText中将参数block赋给属性block，执行属性block时，就会回到上一个控制器中调用self.textfiled.text=showText;block相当于把代码存起来了。</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>block在内存中的状态有三种：NSGlobalBlock，NSStackBlock，NSMallocBlock。NSGlobalBlock，我们只要实现一个对周围变量没有引用的Block，打印该block就会显示为NSGlobalBlock。而如果其中加入了对定义环境变量的引用，就是NSStackBlock。那么NSMallocBlock又是哪来的呢？malloc一词其实大家都熟悉，就是在堆上分配动态内存时。没错，如果你对一个NSStackBlock对象使用了Block_copy()或者发送了copy消息，就会得到NSMallocBlock。</p>
+<p>作为属性，要用copy修饰，原因在于给属性传递的block是存放在栈中，相当于局部变量，为了使该block能够保存起来，用copy修饰，拷贝一下，放在堆中，可以用引用计数对其内存进行管理。</p>
+<p>循环引用问题：</p>
+<p>对象拥有block或者函数方法中有block作为参数，该对象拥有对block的强引用，如果在block中又调用了该对象本身或者其他的成员变量，那么block也拥有对该对象的强引用。ARC的内存管理原则是如果某对象有强引用，该对象是无法被内存释放的，那么block与对象引用成环，构成循环引用，造成内存泄漏。</p>
+<p>解决方法，在block中谨慎分析，发现有循环引用的情况发生时，在block内部将调用的对象弱指针化。__weak typeof(self) weakself = self;</p>
+<h3 id="block底层实现"><a href="#block底层实现" class="headerlink" title="block底层实现"></a>block底层实现</h3><p>利用编译命令将block编译为c++代码：<br>编译结果：<br>block编译结果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">struct __main_block_impl_0 &#123;</span><br><span class="line">struct __block_impl impl;</span><br><span class="line">struct __main_block_desc_0* Desc;</span><br><span class="line">int a;</span><br><span class="line">__main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, int _a, int flags=0) : a(_a) &#123;</span><br><span class="line">impl.isa = &amp;_NSConcreteStackBlock;</span><br><span class="line">impl.Flags = flags;</span><br><span class="line">impl.FuncPtr = fp;</span><br><span class="line">Desc = desc;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">static void __main_block_func_0(struct __main_block_impl_0 *__cself) &#123;</span><br><span class="line">int a = __cself-&gt;a; // bound by copy</span><br><span class="line"></span><br><span class="line">NSLog((NSString *)&amp;__NSConstantStringImpl__var_folders_n__hxtq4ntx1t97ttjtckfnwxlc0000gn_T_main_f9b502_mi_0,a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static struct __main_block_desc_0 &#123;</span><br><span class="line">size_t reserved;</span><br><span class="line">size_t Block_size;</span><br><span class="line">&#125; __main_block_desc_0_DATA = &#123; 0, sizeof(struct __main_block_impl_0)&#125;;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">/* @autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int a=10;</span><br><span class="line"></span><br><span class="line">void (*block)()=&amp;__main_block_impl_0(__main_block_func_0, &amp;__main_block_desc_0_DATA, a));</span><br><span class="line"></span><br><span class="line">a=20;</span><br><span class="line">((void (*)(__block_impl *))((__block_impl *)block)-&gt;FuncPtr)((__block_impl *)block);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">static struct IMAGE_INFO &#123; unsigned version; unsigned flag; &#125; _OBJC_IMAGE_INFO = &#123; 0, 2 &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>block的本质是一个指向结构体的指针，编译器会将block内部的代码生成对应的函数<br>block默认放在栈中，不需要开发人员管理<br>对block进行copy操作，block内存会放在堆里 。<br>MRC：它会对所引用的对象做一次retain操作（叫做循环retain）。如果在该对象的前面用<strong>__block</strong>修饰，block不会对该对象进行retain操作<br>ARC：在ARC中，block会对其中调用的对象一次强引用，容易引起强引用循环，造成内存泄漏。如果在block引用对象前使用<strong>__unsafe_unretain</strong>或者<strong>__weak</strong><br>可以打破循环，使内存正常释放。<br>block修饰要用copy，用assign的话block放在栈中，保不住命</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/30/kvo/" itemprop="url">
+                  KVO使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
+              2016-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>KVO的使用也很简单，就是简单的3步。<br>1.注册需要观察的对象的属性addObserver:forKeyPath:options:context:<br>2.实现observeValueForKeyPath:ofObject:change:context:方法，这个方法当观察的属性变化时会自动调用<br>3.取消注册观察removeObserver:forKeyPath:context:</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>KVO的是KeyValue Observe的缩写，中文是键值观察。KVO是一个对象能够观察另外一个对象的属性的值，并且能够现值的变化。Notification和Delegate模式更加适合一个controller与任何其他的对象进行通信，而 KVO更加适合任何类型的对象侦听另外一个任意对象的改变（这里也可以是controller，但一般不是controller）。这是一个对象与另外一 个对象保持同步的一种方法，即当另外一种对象的状态发生改变时，观察对象马上作出反应。它只能用来对属性作出反应，而不会用来对方法或者动作作出反应。<br>有如下优点：能够提供一种简单的方法实现两个对象间的同步。例如：model和view之间同步；能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；能够提供观察的属性的最新值以及先前值；用key paths来观察属性，因此也可以观察嵌套对象；完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察</p>
+<h3 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h3><p>自己写过一个demo，用dog监听人的年龄属性值的改变，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[self.person addObserver:self.dog <span class="keyword">for</span>KeyPath:@<span class="string">"age"</span> options:0 context:nil];</span><br></pre></td></tr></table></figure></p>
+<p>假设狗要监听人的年龄的属性，在程序运行时，程序将person类改写成NSkvoNotifying_person类；重写setage方法，在set方法中调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self willChangeValueForKey:@<span class="string">"age"</span>];</span><br><span class="line">[self didChangeValueForKey:@<span class="string">"age”];</span></span><br></pre></td></tr></table></figure></p>
+<p>通知狗对象，调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</span><br></pre></td></tr></table></figure></p>
+<p>实现kvo。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -660,8 +781,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -708,7 +829,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
