@@ -95,7 +95,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
 思路
 szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承自UI">
 <meta property="og:image" content="http://cl.ly/051g2j0I0e0t/Screen%20Recording%202016-05-20%20at%2004.11%20%E4%B8%8B%E5%8D%88.gif">
-<meta property="og:updated_time" content="2016-05-20T15:19:27.000Z">
+<meta property="og:updated_time" content="2016-06-16T02:14:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="瀑布流">
 <meta name="twitter:description" content="像蘑菇街，美丽说等女性购物网站中，越来越多用到了瀑布流的展现手法来显示购物内容，不同于collection，瀑布流中的商品展现形式是不同的商品是不同的长度，依次排列。自己写了一个瀑布流的demo，实现此种形式的功能，另外还要参考tableview的代码形式，给使用此框架者较好的调用体验，同时做好cell复用。
@@ -177,7 +177,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -187,7 +187,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -250,7 +250,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
               2016-04-30
             </time>
@@ -294,7 +294,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
 </ul>
 <h3 id="调用街口"><a href="#调用街口" class="headerlink" title="调用街口"></a>调用街口</h3><p>如果需要调用该瀑布流，那么在controller中需要alloc一个szwaterflowview，设置到当前页面，然后需要设置数据源和代理，调用一下reloaddata，实现数据源方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(NSUInteger)NumOfCellsInWaterFlow:(SZwaterFlowView *)waterFlow</span><br><span class="line">-(SZwaterFlowCell *)waterFlow:(SZwaterFlowView *)waterFlow AtindexPath:(NSUInteger)index</span><br></pre></td></tr></table></figure></p>
 <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://cl.ly/051g2j0I0e0t/Screen%20Recording%202016-05-20%20at%2004.11%20%E4%B8%8B%E5%8D%88.gif" alt="牛逼"></p>
-<h3 id="demo地址"><a href="#demo地址" class="headerlink" title="demo地址"></a>demo地址</h3>
+<h3 id="Demo地址"><a href="#Demo地址" class="headerlink" title="Demo地址"></a><a href="https://github.com/suquan/SZwaterFlow" target="_blank" rel="external">Demo地址</a></h3>
       
     </div>
 
@@ -318,16 +318,16 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/30/写在开篇/" rel="next" title="写在开篇">
-                <i class="fa fa-chevron-left"></i> 写在开篇
+              <a href="/2016/04/30/runtime/" rel="next" title="Runtime常见使用">
+                <i class="fa fa-chevron-left"></i> Runtime常见使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/30/Runloop/" rel="prev" title="牛逼的Runloooop">
-                牛逼的Runloooop <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/30/block/" rel="prev" title="挖一挖Block">
+                挖一挖Block <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -377,10 +377,10 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -397,7 +397,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -428,7 +428,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键点"><span class="nav-number">2.</span> <span class="nav-text">关键点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用街口"><span class="nav-number">3.</span> <span class="nav-text">调用街口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo地址"><span class="nav-number">5.</span> <span class="nav-text">demo地址</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键点"><span class="nav-number">2.</span> <span class="nav-text">关键点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用街口"><span class="nav-number">3.</span> <span class="nav-text">调用街口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo地址"><span class="nav-number">5.</span> <span class="nav-text">Demo地址</span></a></li></ol></div>
             
           </div>
         </section>
@@ -455,7 +455,7 @@ szwaterflowview是一个可以上下滑动的UI部件，因此需要使用继承
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
