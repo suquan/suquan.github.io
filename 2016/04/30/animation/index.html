@@ -1,0 +1,570 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="动画在iOS中的重要性一句话，非常重要！！！
+1.0贝塞尔曲线贝塞尔曲线就是这样的一条曲线，它是依据四个位置任意的点坐标绘制出的一条光滑曲线。在历史上，研究贝塞尔曲线的人最初是按照已知曲线参数方程来确定四个点的思路设计出这种矢量曲线绘制法。贝塞尔曲线的有趣之处更在于它的“皮筋效应”，也就是说，随着点有规律地移动，曲线将产生皮筋伸引一样的变换，带来视觉上的冲击。1962年，法国数学家Pierre B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANIMATION">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/animation/index.html">
+<meta property="og:site_name" content="loveSugar">
+<meta property="og:description" content="动画在iOS中的重要性一句话，非常重要！！！
+1.0贝塞尔曲线贝塞尔曲线就是这样的一条曲线，它是依据四个位置任意的点坐标绘制出的一条光滑曲线。在历史上，研究贝塞尔曲线的人最初是按照已知曲线参数方程来确定四个点的思路设计出这种矢量曲线绘制法。贝塞尔曲线的有趣之处更在于它的“皮筋效应”，也就是说，随着点有规律地移动，曲线将产生皮筋伸引一样的变换，带来视觉上的冲击。1962年，法国数学家Pierre B">
+<meta property="og:image" content="https://cl.ly/1l3o0R220h2W/Screen%20Recording%202016-09-06%20at%2011.40%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/171j2C0M0j1K/Screen%20Recording%202016-09-06%20at%2010.55%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/290y0c0t2i25/Screen%20Recording%202016-09-06%20at%2011.10%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/0X1M242V0U2v/Screen%20Recording%202016-09-06%20at%2010.51%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/1g3Y1x1e1q1U/Screen%20Recording%202016-09-06%20at%2010.49%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/3E2z1L351r3m/Screen%20Recording%202016-09-06%20at%2010.46%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/3f2F2S3z071q/Screen%20Recording%202016-09-06%20at%2010.44%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:image" content="https://cl.ly/3J3W3q2j0f3k/Screen%20Recording%202016-09-06%20at%2010.30%20%E4%B8%8A%E5%8D%88.gif">
+<meta property="og:updated_time" content="2016-09-06T04:52:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANIMATION">
+<meta name="twitter:description" content="动画在iOS中的重要性一句话，非常重要！！！
+1.0贝塞尔曲线贝塞尔曲线就是这样的一条曲线，它是依据四个位置任意的点坐标绘制出的一条光滑曲线。在历史上，研究贝塞尔曲线的人最初是按照已知曲线参数方程来确定四个点的思路设计出这种矢量曲线绘制法。贝塞尔曲线的有趣之处更在于它的“皮筋效应”，也就是说，随着点有规律地移动，曲线将产生皮筋伸引一样的变换，带来视觉上的冲击。1962年，法国数学家Pierre B">
+<meta name="twitter:image" content="https://cl.ly/1l3o0R220h2W/Screen%20Recording%202016-09-06%20at%2011.40%20%E4%B8%8A%E5%8D%88.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> ANIMATION | loveSugar </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">loveSugar</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">苏正权的个人技术博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ANIMATION
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-30T22:21:59+08:00" content="2016-04-30">
+              2016-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="动画在iOS中的重要性"><a href="#动画在iOS中的重要性" class="headerlink" title="动画在iOS中的重要性"></a>动画在iOS中的重要性</h2><p>一句话，非常重要！！！</p>
+<h2 id="1-0贝塞尔曲线"><a href="#1-0贝塞尔曲线" class="headerlink" title="1.0贝塞尔曲线"></a>1.0贝塞尔曲线</h2><p>贝塞尔曲线就是这样的一条曲线，它是依据四个位置任意的点坐标绘制出的一条光滑曲线。在历史上，研究贝塞尔曲线的人最初是按照已知曲线参数方程来确定四个点的思路设计出这种矢量曲线绘制法。贝塞尔曲线的有趣之处更在于它的“皮筋效应”，也就是说，随着点有规律地移动，曲线将产生皮筋伸引一样的变换，带来视觉上的冲击。1962年，法国数学家Pierre Bézier第一个研究了这种矢量绘制曲线的方法，并给出了详细的计算公式，因此按照这样的公式绘制出来的曲线就用他的姓氏来命名是为贝塞尔曲线。<br>利用贝塞尔曲线可以画出许多柔和，有弹性的动画效果。</p>
+<h3 id="贝塞尔曲线画气泡："><a href="#贝塞尔曲线画气泡：" class="headerlink" title="贝塞尔曲线画气泡："></a>贝塞尔曲线画气泡：</h3><p>动画一般都在layer层，设置一个变化的成员变量（进度，水滴或许气泡的变化率），在成员变量的set方法中，更新layer层的绘制，手动调用<code>setNeedsDisplay</code>，在<code>-(void)drawInContext:(CGContextRef)ctx</code>方法中重绘图形，充分利用贝塞尔曲线。<br>利用贝塞尔曲线画有韧性的动画效果必须要找准几个关键的点的坐标，所有的动态图形其实是用若干个变化的点组成的图形而已。</p>
+<h3 id="关键代码如下："><a href="#关键代码如下：" class="headerlink" title="关键代码如下："></a>关键代码如下：</h3><h4 id="画不规则动态的圆"><a href="#画不规则动态的圆" class="headerlink" title="画不规则动态的圆"></a>画不规则动态的圆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">UIBezierPath *circlePath = [UIBezierPath bezierPath];</span><br><span class="line">[circlePath moveToPoint:pointA];</span><br><span class="line">[circlePath addCurveToPoint:pointB controlPoint1:c1 controlPoint2:c2];</span><br><span class="line">[circlePath addCurveToPoint:pointC controlPoint1:c3 controlPoint2:c4];</span><br><span class="line">[circlePath addCurveToPoint:pointD controlPoint1:c5 controlPoint2:c6];</span><br><span class="line">[circlePath addCurveToPoint:pointA controlPoint1:c7 controlPoint2:c8];</span><br><span class="line">[circlePath closePath];</span><br><span class="line"></span><br><span class="line">CGContextAddPath(ctx, circlePath.CGPath);</span><br><span class="line">CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);</span><br><span class="line">CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);</span><br><span class="line">CGContextSetLineDash(ctx, 0, NULL, 0);</span><br><span class="line">CGContextDrawPath(ctx,  kCGPathFillStroke);</span><br></pre></td></tr></table></figure>
+<h4 id="画矩形"><a href="#画矩形" class="headerlink" title="画矩形"></a>画矩形</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:self.outsideRect];</span><br><span class="line">CGContextAddPath(ctx, rectPath.CGPath);</span><br><span class="line">CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);</span><br><span class="line">CGContextSetLineWidth(ctx, 1.0);</span><br><span class="line">CGFloat dash[] = &#123;0.5,0.5&#125;;</span><br><span class="line">CGContextSetLineDash(ctx, 0.0, dash, 2);</span><br><span class="line">CGContextStrokePath(ctx);</span><br></pre></td></tr></table></figure>
+<h4 id="把几个关键点用虚线连起来"><a href="#把几个关键点用虚线连起来" class="headerlink" title="把几个关键点用虚线连起来"></a>把几个关键点用虚线连起来</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//连接辅助线</span><br><span class="line">UIBezierPath *helperline = [UIBezierPath bezierPath];</span><br><span class="line">[helperline moveToPoint:pointA];</span><br><span class="line">[helperline addLineToPoint:c1];</span><br><span class="line">[helperline addLineToPoint:c2];</span><br><span class="line">[helperline addLineToPoint:pointB];</span><br><span class="line">[helperline addLineToPoint:c3];</span><br><span class="line">[helperline addLineToPoint:c4];</span><br><span class="line">[helperline addLineToPoint:pointC];</span><br><span class="line">[helperline addLineToPoint:c5];</span><br><span class="line">[helperline addLineToPoint:c6];</span><br><span class="line">[helperline addLineToPoint:pointD];</span><br><span class="line">[helperline addLineToPoint:c7];</span><br><span class="line">[helperline addLineToPoint:c8];</span><br><span class="line">[helperline closePath];</span><br><span class="line"></span><br><span class="line">CGContextAddPath(ctx, helperline.CGPath);</span><br><span class="line"></span><br><span class="line">CGFloat dash2[] = &#123;2.0, 2.0&#125;;</span><br><span class="line">CGContextSetLineDash(ctx, 0.0, dash2, 2);</span><br><span class="line">CGContextStrokePath(ctx); //给辅助线条填充颜色</span><br></pre></td></tr></table></figure>
+<h4 id="标记出关键点"><a href="#标记出关键点" class="headerlink" title="标记出关键点"></a>标记出关键点</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CGContextSetFillColorWithColor(ctx, [UIColor yellowColor].CGColor);</span><br><span class="line">CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);</span><br><span class="line">NSArray *points = @[[NSValue valueWithCGPoint:pointA],[NSValue valueWithCGPoint:c1],[NSValue valueWithCGPoint:c2],[NSValue valueWithCGPoint:pointB],[NSValue valueWithCGPoint:c3],[NSValue valueWithCGPoint:c4],[NSValue valueWithCGPoint:pointC],[NSValue valueWithCGPoint:c5],[NSValue valueWithCGPoint:c6],[NSValue valueWithCGPoint:pointD],[NSValue valueWithCGPoint:c7],[NSValue valueWithCGPoint:c8]];</span><br><span class="line"><span class="keyword">for</span> (NSValue *pointValue <span class="keyword">in</span> points)</span><br><span class="line">&#123;</span><br><span class="line">CGPoint point = [pointValue CGPointValue];</span><br><span class="line">CGContextFillRect(ctx, CGRectMake(point.x-2, point.y-2, 4, 4));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/1l3o0R220h2W/Screen%20Recording%202016-09-06%20at%2011.40%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h3 id="贝塞尔曲线画不规则曲线"><a href="#贝塞尔曲线画不规则曲线" class="headerlink" title="贝塞尔曲线画不规则曲线"></a>贝塞尔曲线画不规则曲线</h3><h4 id="实现原理："><a href="#实现原理：" class="headerlink" title="实现原理："></a>实现原理：</h4><p>menu加在控制器的左边屏幕看不到的地方，点击按钮时，给menu一个动画，从左到右，想要menu的最右边有弹簧的效果，很显然，是利用了贝塞尔曲线，最重要的就是计算贝塞尔的几个点以及控制点。最主要的是计算动点，像这种有弹簧效果的动点显然也是一个纵坐标不变，横坐标变化的点。<br>如何实现上述这样一个点呢？<br>这里是利用两个有弹性的动画，起点一样终点一样，只不过设置的初速度和阻力不同，利用他们的x值的差值，当做这个弹性点的x值。<br>利用<code>CADisplayLink</code>，与屏幕刷新率一样的频率。实时计算动点x值，<code>setNeedsDisplay</code>，画出这个弹性效果。</p>
+<h4 id="主要代码如下："><a href="#主要代码如下：" class="headerlink" title="主要代码如下："></a>主要代码如下：</h4><p>设置CADisplayLink,由于不停的会有动画，不能让CADisplayLink一直开启，做完动画应该关闭CADisplayLink，需要的时候实习开启。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">-(void)beforeAnimation</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (self.link==nil) &#123;</span><br><span class="line"></span><br><span class="line">self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(displalink:)];</span><br><span class="line"></span><br><span class="line">[self.link addToRunLoop:[NSRunLoop mainRunLoop] <span class="keyword">for</span>Mode:NSDefaultRunLoopMode];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">displaylinkCount++;</span><br><span class="line">&#125;</span><br><span class="line">-(void)afterAnimation</span><br><span class="line">&#123;</span><br><span class="line">displaylinkCount--;</span><br><span class="line"><span class="keyword">if</span> (displaylinkCount==0)</span><br><span class="line">&#123;</span><br><span class="line">[self.link invalidate];</span><br><span class="line">self.link= nil;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="点击按钮"><a href="#点击按钮" class="headerlink" title="点击按钮"></a>点击按钮</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">-(void)btnclick</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (!Triggered) &#123;</span><br><span class="line">[UIView animateWithDuration:0.3 animations:^&#123;</span><br><span class="line">self.frame = self.bounds;</span><br><span class="line">&#125;];</span><br><span class="line">//       第一个view</span><br><span class="line">[self beforeAnimation];</span><br><span class="line">[UIView animateWithDuration:0.7 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0.9 options:UIViewAnimationOptionBeginFromCurrentState animations:^&#123;</span><br><span class="line">oneView.frame = CGRectMake(menuWidth-margin, 0, 40, 40);</span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line">[self afterAnimation];</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[UIView animateWithDuration:0.3 animations:^&#123;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">//        第二个view</span><br><span class="line">[self beforeAnimation];</span><br><span class="line">[UIView animateWithDuration:0.7 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:2.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^&#123;</span><br><span class="line">twoView.frame = CGRectMake(menuWidth-margin, 350, 40, 40);</span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line">[self afterAnimation];</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">[self animationBtns];</span><br><span class="line"></span><br><span class="line">Triggered= YES;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">[self untriger];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="按钮的弹性效果"><a href="#按钮的弹性效果" class="headerlink" title="按钮的弹性效果"></a>按钮的弹性效果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-(void)animationBtns</span><br><span class="line">&#123;</span><br><span class="line">int count =0;</span><br><span class="line">int count1 =(int)_btnArray.count;</span><br><span class="line">NSLog(@<span class="string">"%d"</span>,count1);</span><br><span class="line"><span class="keyword">for</span> (UIButton *btn <span class="keyword">in</span> _btnArray)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">btn.transform = CGAffineTransformMakeTranslation(-90, 0);</span><br><span class="line"></span><br><span class="line">[UIView animateWithDuration:0.7 delay:count*0.05 usingSpringWithDamping:1.0 initialSpringVelocity:2.0 options:(UIViewAnimationOptionCurveEaseIn) animations:^&#123;</span><br><span class="line">btn.transform  = CGAffineTransformIdentity;</span><br><span class="line">&#125; completion:^(BOOL finished) &#123;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="效果图：-1"><a href="#效果图：-1" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/171j2C0M0j1K/Screen%20Recording%202016-09-06%20at%2010.55%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h2 id="2-0核心动画"><a href="#2-0核心动画" class="headerlink" title="2.0核心动画"></a>2.0核心动画</h2><h4 id="遮罩的使用："><a href="#遮罩的使用：" class="headerlink" title="遮罩的使用："></a>遮罩的使用：</h4><p>在某个页面上使用遮罩,需要说明的是，在遮罩的contents设置遮罩图形时，透明的地方不会显示，而图片中不透明的地方将会透明，显示下面的图形。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CALayer *mask = [CALayer layer];</span><br><span class="line">mask.contents = (__bridge id _Nullable)([UIImage imageNamed:@<span class="string">"logo"</span>].CGImage);</span><br><span class="line">mask.position =vc.view.center;</span><br><span class="line">mask.bounds = CGRectMake(0, 0, 60, 60);</span><br><span class="line">//    mask.backgroundColor = [UIColor redColor].CGColor;</span><br><span class="line">vc.view.layer.mask = mask;</span><br></pre></td></tr></table></figure></p>
+<h4 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CAKeyframeAnimation *keyFrame = [CAKeyframeAnimation animationWithKeyPath:@<span class="string">"bounds"</span>];</span><br><span class="line">keyFrame.beginTime = CACurrentMediaTime();</span><br><span class="line">keyFrame.duration = 1.0f;</span><br><span class="line">//</span><br><span class="line">CGRect initBounds = mask.bounds;</span><br><span class="line">CGRect secondBounds = CGRectMake(0, 0, 50, 50);</span><br><span class="line">CGRect lastBounds = CGRectMake(0, 0, 1200, 1300);</span><br><span class="line">//</span><br><span class="line">keyFrame.values = @[[NSValue valueWithCGRect:initBounds],[NSValue valueWithCGRect:secondBounds],[NSValue valueWithCGRect:lastBounds]];</span><br><span class="line">//    keyFrame.repeatCount = 0;</span><br><span class="line">防止重复（还有其他的方法）</span><br><span class="line">keyFrame.removedOnCompletion = NO;</span><br><span class="line">keyFrame.fillMode = kCAFillModeForwards;</span><br><span class="line">[mask addAnimation:keyFrame <span class="keyword">for</span>Key:@<span class="string">"haha"</span>];</span><br></pre></td></tr></table></figure>
+<h4 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h4><p>帧动画和<code>basicAnimation</code>差不多，我的理解是<code>basicAnimation</code>是一个只含有两个帧的帧动画，使用帧动画需要设置<code>beginTime</code>(动画的起始时间)，<code>duration</code>（持续时间），<code>values</code>（是一个帧的数组），需要说明的是，<code>values</code>必须要和初始化帧动画的<code>KeyPath</code>对应，另外，帧动画还有一些代理方法，可以在动画执行完了以后调用相关的方法。<br>“但是我们还要注意。当你给一个<code>CALayer</code> 添加动画的时候，动画其实并没有改变这个 <code>layer</code> 的实际属性。取而代之的，系统会创建一个原始 <code>layer</code> 的拷贝。在文档中，苹果称这个原始 <code>layer</code> 为 <code>Model Layer</code> ，而这个复制的 <code>layer</code> 则被称为 <code>Presentation Layer</code> 。 <code>Presentation Layer</code> 的属性会随着动画的进度实时改变，而 <code>Model Layer</code> 中对应的属性则并不会改变。”<br>在动画执行完成之后，图层又回到了原来的位置，这时，会看到动画迅速回到以前的地方，“这里就可以引出 <code>removedOnCompletion</code> 和 <code>fillMode</code> 了。<br>系统在动画完成之后，销毁了<code>Presentation Layer</code>，那么又只剩下<code>model layer</code>，需要设置需要先把 <code>removedOnCompletion</code> 设置为 false ，然后设置 <code>fillMode</code> 为kCAFillModeForwards</p>
+<h4 id="效果图：-2"><a href="#效果图：-2" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/290y0c0t2i25/Screen%20Recording%202016-09-06%20at%2011.10%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h3 id="核心动画的另外两个例子"><a href="#核心动画的另外两个例子" class="headerlink" title="核心动画的另外两个例子"></a>核心动画的另外两个例子</h3><h4 id="点赞跳跃效果。"><a href="#点赞跳跃效果。" class="headerlink" title="点赞跳跃效果。"></a>点赞跳跃效果。</h4><p>像这种效果基本上都是由核心动画一点点拼成的。如果有两个以上的动画想要先后执行，可以把这几个动画放在一个动画组里。需要几个动画同时执行，把动画开始的代理里同时执行。</p>
+<h4 id="核心代码如下："><a href="#核心代码如下：" class="headerlink" title="核心代码如下："></a>核心代码如下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">-(void)animate&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (animating == YES) &#123;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    animating = YES;</span><br><span class="line">    CABasicAnimation *transformAnima = [CABasicAnimation animationWithKeyPath:@<span class="string">"transform.rotation.y"</span>];</span><br><span class="line">    transformAnima.fromValue = @(0);</span><br><span class="line">    transformAnima.toValue = @(M_PI_2);</span><br><span class="line">    transformAnima.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</span><br><span class="line">    </span><br><span class="line">    CABasicAnimation *positionAnima = [CABasicAnimation animationWithKeyPath:@<span class="string">"position.y"</span>];</span><br><span class="line">    positionAnima.fromValue = @(self.starView.center.y);</span><br><span class="line">    positionAnima.toValue = @(self.starView.center.y - 14);</span><br><span class="line">    positionAnima.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseOut];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    CAAnimationGroup *animGroup = [CAAnimationGroup animation];</span><br><span class="line">    animGroup.duration = jumpDuration;</span><br><span class="line">    animGroup.fillMode = kCAFillModeForwards;</span><br><span class="line">    animGroup.removedOnCompletion = NO;</span><br><span class="line">    animGroup.delegate = self;</span><br><span class="line">    animGroup.animations = @[transformAnima,positionAnima];</span><br><span class="line">    </span><br><span class="line">    [self.starView.layer addAnimation:animGroup <span class="keyword">for</span>Key:@<span class="string">"jumpUp"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)animationDidStart:(CAAnimation *)anim&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([anim isEqual:[self.starView.layer animationForKey:@<span class="string">"jumpUp"</span>]]) &#123;</span><br><span class="line">        [UIView animateWithDuration:jumpDuration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^&#123;</span><br><span class="line">            </span><br><span class="line">            _shadowView.alpha = 0.2;</span><br><span class="line">            _shadowView.bounds = CGRectMake(0, 0, _shadowView.bounds.size.width*1.6, _shadowView.bounds.size.height);</span><br><span class="line">            </span><br><span class="line">        &#125; completion:NULL];</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> ([anim isEqual:[self.starView.layer animationForKey:@<span class="string">"jumpDown"</span>]])&#123;</span><br><span class="line">        </span><br><span class="line">        [UIView animateWithDuration:jumpDuration delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^&#123;</span><br><span class="line">            </span><br><span class="line">            _shadowView.alpha = 0.4;</span><br><span class="line">            _shadowView.bounds = CGRectMake(0, 0, _shadowView.bounds.size.width/1.6, _shadowView.bounds.size.height);</span><br><span class="line">            </span><br><span class="line">        &#125; completion:NULL];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//下落动画</span><br><span class="line">- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([anim isEqual:[self.starView.layer animationForKey:@<span class="string">"jumpUp"</span>]]) &#123;</span><br><span class="line">        </span><br><span class="line">        self.state = self.state==Mark?non_Mark:Mark;</span><br><span class="line">        NSLog(@<span class="string">"state:%ld"</span>,_state);</span><br><span class="line">        CABasicAnimation *transformAnima = [CABasicAnimation animationWithKeyPath:@<span class="string">"transform.rotation.y"</span>];</span><br><span class="line">        transformAnima.fromValue = @(M_PI_2);</span><br><span class="line">        transformAnima.toValue = @(M_PI);</span><br><span class="line">        transformAnima.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</span><br><span class="line">        </span><br><span class="line">        CABasicAnimation *positionAnima = [CABasicAnimation animationWithKeyPath:@<span class="string">"position.y"</span>];</span><br><span class="line">        positionAnima.fromValue = @(self.starView.center.y - 14);</span><br><span class="line">        positionAnima.toValue = @(self.starView.center.y);</span><br><span class="line">        positionAnima.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseIn];</span><br><span class="line">        </span><br><span class="line">        CAAnimationGroup *animGroup = [CAAnimationGroup animation];</span><br><span class="line">        animGroup.duration = downDuration;</span><br><span class="line">        animGroup.fillMode = kCAFillModeForwards;</span><br><span class="line">        animGroup.removedOnCompletion = NO;</span><br><span class="line">        animGroup.delegate = self;</span><br><span class="line">        animGroup.animations = @[transformAnima,positionAnima];</span><br><span class="line">        </span><br><span class="line">        [self.starView.layer addAnimation:animGroup <span class="keyword">for</span>Key:@<span class="string">"jumpDown"</span>];</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>([anim isEqual:[self.starView.layer animationForKey:@<span class="string">"jumpDown"</span>]])&#123;</span><br><span class="line">        </span><br><span class="line">        [self.starView.layer removeAllAnimations];</span><br><span class="line">        animating = NO;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="效果图：-3"><a href="#效果图：-3" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/0X1M242V0U2v/Screen%20Recording%202016-09-06%20at%2010.51%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h3 id="下载进度动画"><a href="#下载进度动画" class="headerlink" title="下载进度动画"></a>下载进度动画</h3><p>下载进度条是一个非常常见而且重要的提示动画，一气呵成的动画是由很多个小的动画连接而成的，还是那句话，分而治之可以解决世上的绝大多数问题。<br>view之所以是圆的因为设置<code>cornerRadius</code>，把动画分步骤说明一下：<br>1.圆角半径设为条形宽度的一半（是一个basic动画），在动画开始的时候同时开始改变view的bounds，使view变为一个条形。<br>2.在条形图上画下载进度，需要用到<code>cashapeLayer</code>。绘制<code>strokeend</code>属性。<br>3.完成后将view变回原形，在原形上依然用<code>cashapeLayer</code>绘制打钩图案。<br>啥也不说了。下面上代码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">-(void)tapped:(UIGestureRecognizer *)ges</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (CALayer *subLayer <span class="keyword">in</span> self.layer.sublayers) &#123;</span><br><span class="line">        [subLayer removeFromSuperlayer];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    self.layer.cornerRadius = self.progressBarH/2;</span><br><span class="line">    CABasicAnimation *basic = [CABasicAnimation animationWithKeyPath:@<span class="string">"cornerRadius"</span>];</span><br><span class="line">    basic.duration = 0.2f;</span><br><span class="line">    basic.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</span><br><span class="line">    basic.fromValue = @50;</span><br><span class="line">    basic.delegate = self;</span><br><span class="line">    [self.layer addAnimation:basic <span class="keyword">for</span>Key:@<span class="string">"basicAnimation"</span>];</span><br><span class="line">&#125;</span><br><span class="line">&lt;!--核心动画的代理方法，动画开始执行的时候进来--&gt;</span><br><span class="line">-(void)animationDidStart:(CAAnimation *)anim</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ([anim isEqual:[self.layer animationForKey:@<span class="string">"basicAnimation"</span>]])</span><br><span class="line">    &#123;</span><br><span class="line">        [UIView animateWithDuration:0.6 delay:0.0f usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^&#123;</span><br><span class="line">            self.bounds = CGRectMake(0, 0, self.progressBarW, self.progressBarH);</span><br><span class="line">        &#125; completion:^(BOOL finished) &#123;</span><br><span class="line">            NSLog(@<span class="string">"over"</span>);</span><br><span class="line">            [self.layer removeAllAnimations];</span><br><span class="line">            [self progressAnimation];</span><br><span class="line">            </span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> ([anim isEqual:[self.layer animationForKey:@<span class="string">"toCircleAnimation"</span>]])</span><br><span class="line">    &#123;</span><br><span class="line">        [UIView animateWithDuration:0.6 delay:0.0f usingSpringWithDamping:1.0 initialSpringVelocity:2.0 options:(UIViewAnimationOptionCurveEaseInOut) animations:^&#123;</span><br><span class="line">            self.bounds = CGRectMake(0, 0, 100, 100);</span><br><span class="line">            self.backgroundColor = [UIColor greenColor];</span><br><span class="line">        &#125; completion:^(BOOL finished) &#123;</span><br><span class="line">            </span><br><span class="line">            [self checkAnimation];</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!--打钩图案的绘制动画--&gt;</span><br><span class="line">-(void)checkAnimation</span><br><span class="line">&#123;</span><br><span class="line">//    NSLog(@<span class="string">"check"</span>);</span><br><span class="line">    </span><br><span class="line">    CAShapeLayer *checklayer = [CAShapeLayer layer];</span><br><span class="line">    UIBezierPath *path = [UIBezierPath bezierPath];</span><br><span class="line">    [path moveToPoint:CGPointMake(20, 55)];</span><br><span class="line">    [path addLineToPoint:CGPointMake(40, 80)];</span><br><span class="line">    [path addLineToPoint:CGPointMake(80, 30)];</span><br><span class="line">    </span><br><span class="line">    checklayer.path = path.CGPath;</span><br><span class="line">    checklayer.lineCap = kCALineCapRound;</span><br><span class="line">    checklayer.lineJoin = kCALineJoinRound;</span><br><span class="line">    checklayer.lineWidth = 10;</span><br><span class="line">    checklayer.strokeColor = [UIColor whiteColor].CGColor;</span><br><span class="line">    checklayer.fillColor = [UIColor clearColor].CGColor;</span><br><span class="line">    [self.layer addSublayer:checklayer];</span><br><span class="line">    </span><br><span class="line">    CABasicAnimation *checkAnimation=[CABasicAnimation animationWithKeyPath:@<span class="string">"strokeEnd"</span>];</span><br><span class="line">    checkAnimation.duration = 0.5f;</span><br><span class="line">    checkAnimation.fromValue = @(0.0);</span><br><span class="line">    checkAnimation.toValue = @(1.0);</span><br><span class="line">    checkAnimation.delegate = self;</span><br><span class="line">    [checkAnimation <span class="built_in">set</span>Value:@<span class="string">"checkAnimation"</span> <span class="keyword">for</span>Key:@<span class="string">"animationName"</span>];</span><br><span class="line">    [checklayer addAnimation:checkAnimation <span class="keyword">for</span>Key:nil]; </span><br><span class="line">&#125;</span><br><span class="line">&lt;!--核心动画结束的代理方法--&gt;</span><br><span class="line">-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag</span><br><span class="line">&#123;</span><br><span class="line">    NSString *str = [anim valueForKey:@<span class="string">"animationName"</span>];</span><br><span class="line">    NSLog(@<span class="string">"----%@"</span>,str);</span><br><span class="line">//    这里progress动画是发生在cashapelayer上面，按照下面的这种方式得不到想要的caanimation</span><br><span class="line">    <span class="keyword">if</span> ([[anim valueForKey:@<span class="string">"animationName"</span>]isEqualToString:@<span class="string">"progressAnimation"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        [UIView animateWithDuration:0.3 animations:^&#123;</span><br><span class="line">            <span class="keyword">for</span> (CALayer *layer  <span class="keyword">in</span> self.layer.sublayers)</span><br><span class="line">            &#123;</span><br><span class="line">                layer.opacity = 0.0f;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;completion:^(BOOL finished) &#123;</span><br><span class="line">            <span class="keyword">if</span> (finished)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (CALayer *layer <span class="keyword">in</span> self.layer.sublayers)</span><br><span class="line">                &#123;</span><br><span class="line">                    [layer removeFromSuperlayer];</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                self.layer.cornerRadius = 50;</span><br><span class="line">                CABasicAnimation *toCircleAnimation= [CABasicAnimation animationWithKeyPath:@<span class="string">"cornerRadius"</span>];</span><br><span class="line">                toCircleAnimation.duration = 0.2f;</span><br><span class="line">                toCircleAnimation.fromValue=@(_progressBarH/2);</span><br><span class="line">                toCircleAnimation.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</span><br><span class="line">                toCircleAnimation.delegate =self;</span><br><span class="line">                [self.layer addAnimation:toCircleAnimation <span class="keyword">for</span>Key:@<span class="string">"toCircleAnimation"</span>];</span><br><span class="line">                 &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> ([[anim valueForKey:@<span class="string">"animationName"</span>]isEqualToString:@<span class="string">"checkAnimation"</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        [UIView animateWithDuration:0.2 delay:0.0 usingSpringWithDamping:2.0 initialSpringVelocity:2.0 options:(UIViewAnimationOptionCurveEaseInOut) animations:^&#123;</span><br><span class="line">            self.transform = CGAffineTransformMakeScale(1.1, 1.1);</span><br><span class="line">        &#125; completion:^(BOOL finished) &#123;</span><br><span class="line">            self.transform = CGAffineTransformIdentity;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!--下载进度的方法--&gt;</span><br><span class="line">-(void)progressAnimation</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    self.backgroundColor = [UIColor blueColor];</span><br><span class="line">    CAShapeLayer *progressLayer = [CAShapeLayer layer];</span><br><span class="line">//    progressLayer.strokeEnd</span><br><span class="line">    UIBezierPath *path = [UIBezierPath bezierPath];</span><br><span class="line">    [path moveToPoint:CGPointMake(_progressBarH/2, self.bounds.size.height/2)];</span><br><span class="line">    [path addLineToPoint:CGPointMake(self.bounds.size.width-_progressBarH/2, self.bounds.size.height/2)];</span><br><span class="line">    progressLayer.path = path.CGPath;</span><br><span class="line">    progressLayer.lineWidth = _progressBarH-6;</span><br><span class="line">    progressLayer.lineCap = kCALineCapRound;</span><br><span class="line">    progressLayer.strokeColor = [UIColor whiteColor].CGColor;</span><br><span class="line">    </span><br><span class="line">    [self.layer addSublayer:progressLayer];</span><br><span class="line">    </span><br><span class="line">    CABasicAnimation *progressAnimation = [CABasicAnimation animationWithKeyPath:@<span class="string">"strokeEnd"</span>];</span><br><span class="line">    progressAnimation.duration = 1.0;</span><br><span class="line">    progressAnimation.fromValue =@(0.1f);</span><br><span class="line">    progressAnimation.toValue = @(1.0f);</span><br><span class="line">    progressAnimation.delegate = self;</span><br><span class="line">    [progressAnimation <span class="built_in">set</span>Value:@<span class="string">"progressAnimation"</span> <span class="keyword">for</span>Key:@<span class="string">"animationName"</span>];</span><br><span class="line">    [progressLayer addAnimation:progressAnimation <span class="keyword">for</span>Key:nil];</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="效果图：-4"><a href="#效果图：-4" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/1g3Y1x1e1q1U/Screen%20Recording%202016-09-06%20at%2010.49%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h2 id="3-0转场动画"><a href="#3-0转场动画" class="headerlink" title="3.0转场动画"></a>3.0转场动画</h2><p>这种动画刚开始接触的时候觉得有点屌，而且实现跟以前想的有点不一样。iOS7 开始苹果推出了自定义转场的 API 。从此，任何可以用 <code>CoreAnimation</code> 实现的动画，都可以出现在两个 <code>ViewController</code> 的切换之间。并且实现方式高度解耦.<br>在需要有转场动画的控制器实现<code>UINavigationControllerDelegate</code>协议，实现这个协议后，可以在导航控制器跳转是进入<code>-(id&lt;UIViewControllerAnimatedTransitioning&gt;)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC</code>方法，重写此方法，定义需要转场效果。<br>根据此方法，很显然，需要实现一个实现<code>UIViewControllerAnimatedTransitioning</code>协议的类，需要注意的是，判断operation的类型， 是push还是pop等<br>下面是实现<code>id&lt;UIViewControllerAnimatedTransitioning&gt;</code>,需要重写两个方法<br><code>- (NSTimeInterval)transitionDuration:(nullable id &lt;UIViewControllerContextTransitioning&gt;)transitionContext</code><br>返回转场的时间<br><code>-(void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext</code><br>转场动画实现的地方<br>贴上代码，秒懂吧<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">self.transitionContext = transitionContext;</span><br><span class="line">    ViewController * fromVC = (ViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];</span><br><span class="line">    twoController *toVC = (twoController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];</span><br><span class="line">    UIView *contView = [transitionContext containerView];</span><br><span class="line">    UIButton *button = fromVC.btn;</span><br><span class="line">    [contView addSubview:fromVC.view];</span><br><span class="line">    [contView addSubview:toVC.view];</span><br><span class="line">    UIBezierPath *startMask = [UIBezierPath bezierPathWithOvalInRect:button.frame];</span><br><span class="line">    //判断按钮在哪个象限</span><br><span class="line">    CGPoint finalPoint;</span><br><span class="line">    //判断触发点在那个象限</span><br><span class="line">    <span class="keyword">if</span>(button.frame.origin.x &gt; (toVC.view.bounds.size.width / 2))&#123;</span><br><span class="line">        <span class="keyword">if</span> (button.frame.origin.y &lt; (toVC.view.bounds.size.height / 2)) &#123;</span><br><span class="line">            //第一象限</span><br><span class="line">            finalPoint = CGPointMake(button.center.x - 0, button.center.y - CGRectGetMaxY(toVC.view.bounds)+30);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            //第四象限</span><br><span class="line">            finalPoint = CGPointMake(button.center.x - 0, button.center.y - 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (button.frame.origin.y &lt; (toVC.view.bounds.size.height / 2)) &#123;</span><br><span class="line">            //第二象限</span><br><span class="line">            finalPoint = CGPointMake(button.center.x - CGRectGetMaxX(toVC.view.bounds), button.center.y - CGRectGetMaxY(toVC.view.bounds)+30);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            //第三象限</span><br><span class="line">            finalPoint = CGPointMake(button.center.x - CGRectGetMaxX(toVC.view.bounds), button.center.y - 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    CGFloat radius = sqrt((finalPoint.x * finalPoint.x) + (finalPoint.y * finalPoint.y));</span><br><span class="line">    UIBezierPath *maskFinalBP = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(button.frame, -radius, -radius)];</span><br><span class="line">    CAShapeLayer *mask = [CAShapeLayer layer];</span><br><span class="line">    mask.path = maskFinalBP.CGPath;</span><br><span class="line">    toVC.view.layer.mask = mask ;</span><br><span class="line">    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@<span class="string">"path"</span>];</span><br><span class="line">    basicAnimation.duration = [self transitionDuration:self.transitionContext];</span><br><span class="line">    basicAnimation.fromValue  =(__bridge id _Nullable)(startMask.CGPath);</span><br><span class="line">    basicAnimation.toValue = (__bridge id _Nullable)(maskFinalBP.CGPath);</span><br><span class="line">    basicAnimation.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</span><br><span class="line">    basicAnimation.delegate = self;</span><br><span class="line">    [mask addAnimation:basicAnimation <span class="keyword">for</span>Key:@<span class="string">"testAnimation"</span>];</span><br></pre></td></tr></table></figure></p>
+<p>需要说明的是，在动画结束的时候，把图层的mask清掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag</span><br><span class="line">&#123;</span><br><span class="line">    [self.transitionContext completeTransition:![self. transitionContext transitionWasCancelled]];</span><br><span class="line">    //清除 fromVC 的 mask</span><br><span class="line">    [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;</span><br><span class="line">    [self.transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="效果图：-5"><a href="#效果图：-5" class="headerlink" title="效果图："></a>效果图：<img src="https://cl.ly/3E2z1L351r3m/Screen%20Recording%202016-09-06%20at%2010.46%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></h4><h2 id="4-0数学动画"><a href="#4-0数学动画" class="headerlink" title="4.0数学动画"></a>4.0数学动画</h2><h4 id="自定义动画中的数学："><a href="#自定义动画中的数学：" class="headerlink" title="自定义动画中的数学："></a>自定义动画中的数学：</h4><p>首先说自定义动画，对于coreAnimation，创建动画时animationWithKeyPath会指定对layer的哪些属性创建动画，比如frame，圆角等等，其实除了带有animated属性的可以创建核心动画以外，还可以根据需求自定义属性动画，比如说在一个自定义的layer层定义了一个属性xAxisPercent，也可以作为核心动画的keypath，只是对于没有animated属性，需要在layer层重载+(BOOL)needsDisplayForKey:(NSString *)key方法，如果key为xAxisPercent，那么返回YES。</p>
+<h4 id="在动画中使用数学："><a href="#在动画中使用数学：" class="headerlink" title="在动画中使用数学："></a>在动画中使用数学：</h4><p>举例来说，对于上面的自定义属性，要使它在动画中的变化数值为一个弹性数值，类似于阻尼震动曲线，我的思路是使用帧动画，在帧动画的values属性设置时，利用一个y = 1-e^{-5x} * cos(30x)或者其他的数学公式（抛物线等等），来获取每个value的值，并把它装进values数组中。<br>代码如下：<br>弹性效果如图所示<br><img src="https://cl.ly/3f2F2S3z071q/Screen%20Recording%202016-09-06%20at%2010.44%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></p>
+<h2 id="5-0特殊效果"><a href="#5-0特殊效果" class="headerlink" title="5.0特殊效果"></a>5.0特殊效果</h2><h3 id="粒子效果"><a href="#粒子效果" class="headerlink" title="粒子效果"></a>粒子效果</h3><p><code>CAEmitterLayer</code>是<code>calayer</code>的子类，它是一个高性能的粒子引擎。我记得在以前刚刚接触贝塞尔曲线的时候学习过QQ的ios版未读气泡可以扯动，消失的时候有个动画是个气泡爆炸效果，当时做不出来，后来才知道是用粒子效果做的，废话不多说。</p>
+<h3 id="使用方法如下："><a href="#使用方法如下：" class="headerlink" title="使用方法如下："></a>使用方法如下：</h3><h4 id="粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释"><a href="#粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释" class="headerlink" title="粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释"></a>粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">//   alpha通道的范围</span><br><span class="line">    cell.alphaRange = 0.20;</span><br><span class="line">//    alpha通道的改变速率</span><br><span class="line">    cell.alphaSpeed = -1.0;</span><br><span class="line">//    每个粒子的平均生命周期</span><br><span class="line">    cell.lifetime = 0.7;</span><br><span class="line">//    生命周期的范围（上下浮动）</span><br><span class="line">    cell.lifetimeRange = 0.3;</span><br><span class="line">//    每秒产生的例子数</span><br><span class="line">    cell.birthRate = 0;</span><br><span class="line">//    粒子的发射平均速度</span><br><span class="line">    cell.velocity = 40.0;</span><br><span class="line">//    粒子速度的浮动范围</span><br><span class="line">    cell.velocityRange = 10;</span><br><span class="line">//    粒子发射与圆切面的角度（自己的理解）</span><br><span class="line">    cell.emissionRange = M_PI_4/2;</span><br><span class="line">//    粒子背景图片</span><br><span class="line">    cell.contents = (id)[[UIImage imageNamed:@<span class="string">"Sparkle"</span>] CGImage];</span><br><span class="line">//    背景需要缩小范围</span><br><span class="line">    cell.scale = 0.05;</span><br><span class="line">//    scale的上下浮动范围</span><br><span class="line">    cell.scaleRange = 0.02;</span><br><span class="line">    </span><br><span class="line">    CAEmitterLayer *explode = [CAEmitterLayer layer];</span><br><span class="line">    explode.name = @<span class="string">"explode"</span>;</span><br><span class="line">//    所有的粒子以怎样的形状发射</span><br><span class="line">    explode.emitterShape = kCAEmitterLayerCircle;</span><br><span class="line">//    向哪个方向发射</span><br><span class="line">    explode.emitterMode = kCAEmitterLayerOutline;</span><br><span class="line">//    发射中心点的位置</span><br><span class="line">    explode.emitterPosition = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));</span><br><span class="line">//    发射源的形状</span><br><span class="line">    explode.emitterSize = CGSizeMake(25, 0);</span><br><span class="line">    </span><br><span class="line">    explode.emitterCells = @[cell];</span><br><span class="line">//    渲染模式</span><br><span class="line">    explode.renderMode = kCAEmitterLayerOldestFirst;</span><br><span class="line">    explode.masksToBounds = NO;</span><br><span class="line">     self.explodeLayer = explode;</span><br><span class="line">    [self.layer addSublayer:explode];</span><br></pre></td></tr></table></figure>
+<h3 id="效果图如下："><a href="#效果图如下：" class="headerlink" title="效果图如下："></a>效果图如下：</h3><p><img src="https://cl.ly/3J3W3q2j0f3k/Screen%20Recording%202016-09-06%20at%2010.30%20%E4%B8%8A%E5%8D%88.gif" alt="Mou icon"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>iOS系统中对我来说最令人着迷的就是它的动画，作上述总结前前后后花了我不少时间，由于在招商银行实习期间做的是前端和后台开发的工作，都是从头学起，所以整个暑假都把这篇动画篇的博客放在电脑里没动，现在实习完了，抽了个时间赶紧弄完，也算给自己前期的工作结个尾。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/30/block/" rel="next" title="挖一挖Block">
+                <i class="fa fa-chevron-left"></i> 挖一挖Block
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description">春风十里不如你</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画在iOS中的重要性"><span class="nav-number">1.</span> <span class="nav-text">动画在iOS中的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-0贝塞尔曲线"><span class="nav-number">2.</span> <span class="nav-text">1.0贝塞尔曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#贝塞尔曲线画气泡："><span class="nav-number">2.1.</span> <span class="nav-text">贝塞尔曲线画气泡：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码如下："><span class="nav-number">2.2.</span> <span class="nav-text">关键代码如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#画不规则动态的圆"><span class="nav-number">2.2.1.</span> <span class="nav-text">画不规则动态的圆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#画矩形"><span class="nav-number">2.2.2.</span> <span class="nav-text">画矩形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把几个关键点用虚线连起来"><span class="nav-number">2.2.3.</span> <span class="nav-text">把几个关键点用虚线连起来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记出关键点"><span class="nav-number">2.2.4.</span> <span class="nav-text">标记出关键点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图："><span class="nav-number">2.2.5.</span> <span class="nav-text">效果图：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贝塞尔曲线画不规则曲线"><span class="nav-number">2.3.</span> <span class="nav-text">贝塞尔曲线画不规则曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现原理："><span class="nav-number">2.3.1.</span> <span class="nav-text">实现原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主要代码如下："><span class="nav-number">2.3.2.</span> <span class="nav-text">主要代码如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击按钮"><span class="nav-number">2.3.3.</span> <span class="nav-text">点击按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮的弹性效果"><span class="nav-number">2.3.4.</span> <span class="nav-text">按钮的弹性效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图：-1"><span class="nav-number">2.3.5.</span> <span class="nav-text">效果图：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-0核心动画"><span class="nav-number">3.</span> <span class="nav-text">2.0核心动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遮罩的使用："><span class="nav-number">3.0.1.</span> <span class="nav-text">遮罩的使用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帧动画"><span class="nav-number">3.0.2.</span> <span class="nav-text">帧动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#另外"><span class="nav-number">3.0.3.</span> <span class="nav-text">另外</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图：-2"><span class="nav-number">3.0.4.</span> <span class="nav-text">效果图：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心动画的另外两个例子"><span class="nav-number">3.1.</span> <span class="nav-text">核心动画的另外两个例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#点赞跳跃效果。"><span class="nav-number">3.1.1.</span> <span class="nav-text">点赞跳跃效果。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心代码如下："><span class="nav-number">3.1.2.</span> <span class="nav-text">核心代码如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图：-3"><span class="nav-number">3.1.3.</span> <span class="nav-text">效果图：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载进度动画"><span class="nav-number">3.2.</span> <span class="nav-text">下载进度动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图：-4"><span class="nav-number">3.2.1.</span> <span class="nav-text">效果图：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-0转场动画"><span class="nav-number">4.</span> <span class="nav-text">3.0转场动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图：-5"><span class="nav-number">4.0.1.</span> <span class="nav-text">效果图：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-0数学动画"><span class="nav-number">5.</span> <span class="nav-text">4.0数学动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义动画中的数学："><span class="nav-number">5.0.1.</span> <span class="nav-text">自定义动画中的数学：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在动画中使用数学："><span class="nav-number">5.0.2.</span> <span class="nav-text">在动画中使用数学：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-0特殊效果"><span class="nav-number">6.</span> <span class="nav-text">5.0特殊效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#粒子效果"><span class="nav-number">6.1.</span> <span class="nav-text">粒子效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法如下："><span class="nav-number">6.2.</span> <span class="nav-text">使用方法如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释"><span class="nav-number">6.2.1.</span> <span class="nav-text">粒子效果是在layer层实现的，需要新建一个view，将粒子效果的layer层加进去，下面具体解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图如下："><span class="nav-number">6.3.</span> <span class="nav-text">效果图如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
